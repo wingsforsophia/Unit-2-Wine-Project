@@ -16,6 +16,8 @@ require("./config/database");
 // load passport
 require("./config/passport");
 
+// require('bootstrap')
+
 // require routes
 const indexRouter = require("./routes/index");
 const authRouter = require("./routes/auth");
@@ -34,6 +36,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
+
+// app.use('/css', express.static(path.join(_dirname, 'node_modules/bootstrap/dist/css')))
+// app.use('/js', express.static(path.join(_dirname, 'node_modules/bootstrap/dist/js')))
+// app.use('/js', express.static(path.join(_dirname, 'node_modules/jquery/dist')))
+
 
 // passport middleware
 app.use(

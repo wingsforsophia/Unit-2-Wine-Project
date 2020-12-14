@@ -8,6 +8,8 @@ const userSchema = new Schema(
     avatar: String,
     googleId: String,
     friends: [{type: Schema.Types.ObjectId, ref: "User"}],
+    favoriteWines: [{ type: Schema.Types.ObjectId, ref: "Wine" }],
+    winesTried: [{ type: Schema.Types.ObjectId, ref: "Wine" }]
   },
   {
     timestamps: true,

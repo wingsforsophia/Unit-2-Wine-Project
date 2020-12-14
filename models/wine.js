@@ -1,6 +1,8 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
+
+
 const priceSchema = new Schema ({
     price: Number, 
     location: String, 
@@ -25,10 +27,7 @@ const pairingSchema = new Schema ({
     date: Date
 }, {
     timestamps: true
-}
-)
-
-
+})
 
 
 const wineSchema = new Schema ({

@@ -36,7 +36,7 @@ const wineSchema = new Schema ({
     year: Number, 
     url: String, 
     price: [priceSchema],
-    liked: Boolean, 
+    rating: {type: Number, min: 0, max: 10}, 
     reviews: [reviewSchema],
     image: String, 
     pairings: [pairingSchema],

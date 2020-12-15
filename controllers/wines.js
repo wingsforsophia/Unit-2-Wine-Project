@@ -1,7 +1,8 @@
 const Wine = require('../models/wine')
 
 module.exports = {
-    new: newWine
+    new: newWine,
+    create
 }
 
 function newWine(req, res) {
@@ -9,4 +10,9 @@ function newWine(req, res) {
         title: "Add New Wine", 
         user: req.user
     })
+}
+
+function create (req, res) {
+
+    
 }

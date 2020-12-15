@@ -1,52 +1,35 @@
 <%- include('../partials/header') %>
-<h3><%= title %></h3>
+  <h3>
+    <%= title %>
+  </h3>
 
-<form>
-  <div class="form-row">
-    <div class="col">
-      <input type="text" class="form-control" placeholder="Wine Name">
-    </div>
-    <div class="col">
-      <input type="text" class="form-control" placeholder="Varietal">
-    </div>
-  </div>
-</form>
-<br />
-<form>
-  <div class="form-row">
-    <div class="col">
-      <input type="number" class="form-control" placeholder="Year">
-    </div>
-    <div class="col">
-      <input type="text" class="form-control" placeholder="URL">
-    </div>
-  </div>
-</form>
-<br />
-<form>
-  <div class="form-row">
-    <div class="col">
-      <input type="text" class="form-control" placeholder="Price">
-    </div>
-    <div class="col">
-      <input type="text" class="form-control" placeholder="Purchased From">
-    </div>
-  </div>
-</form>
-<br />
-<form>
-  \
-  <div class="form-row">
-    <div class="col">
-      <input type="text" class="form-control" placeholder="URL">
-    </div>
-    <div class="col">
-      <input type="text" class="form-control" placeholder="Image URL">
-    </div>
-  </div>
-</form>
-<br />
-<button type="button" class="btn btn-success">Add Wine</button>
+  <form action="/wines" method="POST">
+    <div class="form-row">
+      <div class="col">
+        <input type="text" class="form-control" name="name" autocomplete="off" placeholder="Wine Name">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" name="varietal" autocomplete="off" placeholder="Varietal">
+      </div>
+    </div><br />
 
-<%- include('../partials/footer') %>
+    <div class="form-row">
+      <div class="col">
+        <input type="number" class="form-control" name="year" autocomplete="off" placeholder="Year">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" name="image" autocomplete="off" placeholder="Image URL">
+      </div>
+    </div><br />
+    <div class="form-row">
+      <div class="col">
+        <input type="text" class="form-control" name="url" autocomplete="off" placeholder="URL">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" name="rating" autocomplete="off" placeholder="Rating: 1-10">
+      </div>
+    </div> <br />
+    <button type="submit" class="btn btn-success">Add Wine</button>
+  </form>
 
+  <%- include('../partials/footer') %>

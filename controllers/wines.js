@@ -13,6 +13,14 @@ function newWine(req, res) {
 }
 
 function create (req, res) {
+Wine.create(req.body)
+    .then(() => {
+        res.render('wines/show', {
+            title: "Wine Details",
+            user: req.user,
 
+        })
+        console.log(wine)
+    })
     
 }

@@ -2,7 +2,8 @@ const Wine = require('../models/wine')
 
 module.exports = {
     new: newWine,
-    create
+    create,
+    index
 }
 
 function newWine(req, res) {
@@ -14,13 +15,21 @@ function newWine(req, res) {
 
 function create (req, res) {
 Wine.create(req.body)
-    .then(() => {
-        res.render('wines/show', {
-            title: "Wine Details",
-            user: req.user,
-
-        })
-        console.log(wine)
-    })
-    
+.then(() => {
+  res.redirect('/')
+})
+// .catch((err) => {
+//     console.log(err)
+//     })
 }
+
+function index (req, res) {
+   Wine.find({})
+    .then((wines) => {
+        res.render('wines/index', {
+            title: "Wines I've Tried",
+            wines
+        })
+    }) 
+   
+    }

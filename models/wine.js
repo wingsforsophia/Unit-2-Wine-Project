@@ -39,7 +39,6 @@ const wineSchema = new Schema ({
     liked: Boolean, 
     reviews: [reviewSchema],
     image: String, 
-    paired: Boolean, 
     pairings: [pairingSchema],
     triedBy: [{ type: Schema.Types.ObjectId, ref: "User" }],
     favoritedBy: [{ type: Schema.Types.ObjectId, ref: "User" }],

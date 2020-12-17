@@ -27,7 +27,7 @@ function index (req, res) {
    Wine.find({})
     .then((wines) => {
         res.render('wines/index', {
-            title: "Wines I've Tried",
+            title: "All Wines",
             user: req.user,
             wines
         })

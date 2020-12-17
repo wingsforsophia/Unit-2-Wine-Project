@@ -5,7 +5,9 @@ module.exports = {
     index,
     showProfile,
     update,
-    show
+    show,
+    addFriend, 
+    removeFriend
 }
 
 function index(req, res) {
@@ -16,8 +18,9 @@ function index(req, res) {
 
 function showProfile(req, res) {
     User.findById(req.user._id)
-        .then((user) => {
-            res.render('users/profile', { title: "Profile Page", user })
+    .populate('friends')
+    .then((user) => {
+        res.render('users/profile', { title: "Profile Page", user })
         })
 }
 
@@ -37,4 +40,21 @@ function show(req, res) {
                 user: req.user
             })
         })
+}
+
+function addFriend (req, res) {
+ req.user.friends.push(req.params.id)
+ req.user.save()
+ .then(() => {
+     res.redirect(`/users/${req.params.id}`)
+ })
+}
+
+function removeFriend (req, res) {
+  let idx = req.user.friends.indexOf(req.params.id)  
+  req.user.friends.splice(idx, 1)
+  req.user.save()
+  .then(() => {
+    res.redirect(`/users/${req.params.id}`)
+  })
 }

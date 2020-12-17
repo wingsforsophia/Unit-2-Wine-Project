@@ -1,6 +1,14 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+const wineListSchema = new Schema({
+  name: String,
+  varietal: String,
+  year: Number
+}, {
+  timestamps: true
+})
+
 const userSchema = new Schema(
   {
     name: String,
@@ -8,9 +16,10 @@ const userSchema = new Schema(
     email: String,
     avatar: String,
     googleId: String,
+    bio: String,
     friends: [{ type: Schema.Types.ObjectId, ref: "User" }],
     favoriteWines: [{ type: Schema.Types.ObjectId, ref: "Wine" }],
-    winesTried: [{ type: Schema.Types.ObjectId, ref: "Wine" }]
+    wineList: [wineListSchema]
   },
   {
     timestamps: true,

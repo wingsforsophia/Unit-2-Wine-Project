@@ -69,8 +69,8 @@
       <div class="tab-pane fade show" id="winelist" role="tabpanel" aria-labelledby="winelist-tab">
         <div class="card-body">
         <!-- This is where we'll use a forEach to display winelist items -->
-        <% user.wineList.forEach(g => { %>
-          <a href="/games/<%= g.slug %>"><p><%= g.title %></p></a>
+        <% user.wineList.forEach(w => { %>
+          <a href="/wines/<%= w.name %>"><p><%= w.varietal %></p></a>
         <% }) %> 
         </div>
       </div>

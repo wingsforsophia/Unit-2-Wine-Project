@@ -1,0 +1,31 @@
+<%- include('../partials/header') %>
+
+<h3><%= title %></h3>
+<!-- We'll need to fill in the route for this search form -->
+<form action="/wines/search" method="POST">
+  <div class="form-row">
+    <div class="col-md-4">
+      <input type="text" class="form-control" name="query" placeholder="Search for wine...">
+    </div>
+  </div>
+  <button type="submit" class="btn btn-success">Search</button>
+</form>
+<!-- This is where we'll output the results to the page -->
+<!-- after they are returned from the API call! -->
+<% if (results) { %>
+  <% results.forEach(wine => { %>
+    <div class="card" style="width: 18rem;">
+      <img src="<%= wine.image %>" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><%= wine.name %> </h5>
+        <p class="card-text">Varietal: <%= wine.varietal %></p>
+        <p class="card-text">Year: <%= wine.year %></p>
+       
+        <!-- This is a button that we'll use to navigate to the game's 'show' page.  We still need to fill in the route -->
+        <a href="/wines/<%= wine._id %>" class="btn btn-primary">Details</a>
+      </div>
+    </div>
+  <% }) %>
+<% } %> 
+
+<%- include('../partials/footer') %>

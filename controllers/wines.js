@@ -9,8 +9,9 @@ module.exports = {
 function newWine(req, res) {
     res.render('wines/new', {
         title: "Add New Wine", 
-        user: req.user
-    })
+        user: req.user, 
+        results: null
+        })
 }
 
 function create (req, res) {

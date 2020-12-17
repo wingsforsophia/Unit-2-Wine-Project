@@ -1,7 +1,7 @@
 const router = require('express').Router()
 const winesCtrl = require('../controllers/wines')
 
-router.get('/index', isLoggedIn, winesCtrl.index)
+router.get('/', isLoggedIn, winesCtrl.index)
 router.get('/new', isLoggedIn, winesCtrl.new)
 router.post('/', isLoggedIn, winesCtrl.create)
 

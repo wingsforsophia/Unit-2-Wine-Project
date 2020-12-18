@@ -3,7 +3,11 @@ const Wine = require('../models/wine')
 module.exports = {
     new: newWine,
     create,
-    index
+    index,
+    search,
+    show,
+    addToWineList,
+    removeFromWineList
 }
 
 function newWine(req, res) {
@@ -33,5 +37,45 @@ function index (req, res) {
             wines
         })
     }) 
-   
     }
+
+    function search (req, res) {
+     Wine.find(`${req.body.query}`)
+        .then((result) => {
+            console.log(result)
+            res.render('wines/index', {
+                title: "All Wines",
+                user: req.user,
+                result
+            })
+        })
+    }
+
+function show (req, res) {
+  Wine.findById(req.params.id)
+  .then((wine) => {
+      res.render(`wines/show`, {
+          title: "Details",
+          user: req.user,
+          wine
+      })
+  })
+
+}
+
+function addToWineList (req, res) {
+  req.user.wineList.push(req.body)
+  req.user.save()
+  .then(() => {
+      res.redirect(`wines/${req.body.id}`)
+  })
+}
+
+function removeFromWineList (req, res) {
+  let idx = req.user.wineList.findIndex((w) => w._id === req.params.id)  
+  req.user.wineList.splice(idx, 1)
+  req.user.save()
+  .then(() => {
+      res.redirect(`wines/${req.body.id}`)
+  })
+}

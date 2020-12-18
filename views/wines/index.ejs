@@ -3,13 +3,21 @@
   <%= title %>
 </h3>
 
+<!-- We'll need to fill in the route for this search form -->
+<form action="/wines/search" method="POST">
+  <div class="form-row">
+    <div class="col-md-4">
+      <input type="text" class="form-control" name="query" placeholder="Search for wine...">
+    </div>
+  </div>
+  <button type="submit" class="btn btn-success">Search</button>
+</form>
+
   
   <% wines.forEach((wine) => { %>
 
-     
-    
     <div class="card" style="width: 18rem;" id="wineList">
-      <img src="<%= wine.image %> " class="card-img-top" alt="...">
+      <img src="<%= wine.image %> " class="card-img-top" alt="image of the wine bottle">
       <div class="card-body">
         <h5 class="card-title"> <%= wine.name %> </h5>
     
@@ -19,7 +27,7 @@
         <li class="list-group-item"> Rating: <%= wine.rating %> </li>
          </ul>
       <div class="card-body">
-        <a href="<%= wine.url %> " class="card-link" target="_blank">More Details</a>
+        <a href="/wines/<%= wine._id %> " class="card-link">More Details</a>
         <a href="#" class="card-link">Edit Wine</a>
       </div>
     </div>

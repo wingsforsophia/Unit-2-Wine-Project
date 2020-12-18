@@ -17,7 +17,10 @@ Invite your friends to join and see which wines they have liked and tried, as we
 ## Wireframes
 
 ![First wireframe](https://i.imgur.com/mpv0nFe.png)
-![Second wireframe](https://i.imgur.com/i3bkAo1.png)
+
+## Screenshots
+
+![First screenshot](https://i.imgur.com/i3bkAo1.png)
 
 ## Technologies Used
 

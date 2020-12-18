@@ -22,7 +22,8 @@ const reviewSchema = new Schema ({
 
 const pairingSchema = new Schema ({
     pariedWith: String, 
-    recipeUrl: String, 
+    url: String,
+    image: String,
     date: Date,
     notes: String
 }, {

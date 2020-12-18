@@ -23,7 +23,8 @@ const reviewSchema = new Schema ({
 const pairingSchema = new Schema ({
     pariedWith: String, 
     recipeUrl: String, 
-    date: Date
+    date: Date,
+    notes: String
 }, {
     timestamps: true
 })

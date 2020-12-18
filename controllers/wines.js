@@ -13,6 +13,7 @@ module.exports = {
 }
 
 function newWine(req, res) {
+  
     res.render('wines/new', {
         title: "Add New Wine", 
         user: req.user, 
@@ -23,7 +24,7 @@ function newWine(req, res) {
 function create (req, res) {
 Wine.create(req.body)
 .then(() => {
-  res.redirect('/')
+  res.redirect('/wines')
 })
 // .catch((err) => {
 //     console.log(err)

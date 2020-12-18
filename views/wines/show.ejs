@@ -8,7 +8,7 @@
         </li>
         <!-- This is the tab header for the list of who has the game in their collection -->
         <li class="nav-item">
-          <a class="nav-link" id="favorited-tab" data-toggle="tab" href="#favorited" role="tab" aria-controls="favorited" aria-selected="false">Owned By</a>
+          <a class="nav-link" id="favorited-tab" data-toggle="tab" href="#favorited" role="tab" aria-controls="favorited" aria-selected="false">Favorited By</a>
         </li>
         <!-- This is the tab header for reviews -->
         <li class="nav-item">
@@ -20,6 +20,7 @@
           <div class="card-body">
             <h5 class="card-title"><%= wine.name %> </h5>
             <p class="card-text">Varietal: <%= wine.varietal %></p>
+            <p class="card-text">Year: <%= wine.year %></p>
            
            
           </div>
@@ -27,7 +28,7 @@
         <!-- This is the tab that will contain our forEach loop indicating who has the game in their collection -->
         <div class="tab-pane fade" id="favorited" role="tabpanel" aria-labelledby="favorited-tab">
           <div class="card-body">
-            <p>Owned By:</p>
+            <p>Favorited By:</p>
             <!-- This is where we'll put our favoritedBy.forEach loop -->
           </div>
         </div>

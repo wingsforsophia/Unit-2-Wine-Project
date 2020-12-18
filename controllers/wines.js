@@ -7,7 +7,9 @@ module.exports = {
     search,
     show,
     addToWineList,
-    removeFromWineList
+    removeFromWineList,
+    edit,
+    update
 }
 
 function newWine(req, res) {
@@ -78,4 +80,23 @@ function removeFromWineList (req, res) {
   .then(() => {
       res.redirect(`/wines/${req.params.id}`)
   })
+}
+
+function edit (req, res) {
+  Wine.findById(req.params.id)
+  .then((wine) => {
+      res.render('wines/edit', {
+          title: "Edit Wine",
+          user: req.user,
+          wine
+      })
+  })  
+}
+
+function update (req, res) {
+    Wine.findByIdAndUpdate(req.params.id, req.body, {new: true})
+    .then((wine) => {
+        res.redirect(`/wines/${req.params.id}`)
+
+    })
 }

@@ -1,0 +1,35 @@
+<%- include('../partials/header') %>
+  <h3>
+    <%= title %>
+  </h3>
+
+  <form action="/wines/<%= wine._id %>?_method=PUT" method="POST">
+    <div class="form-row">
+      <div class="col">
+        <input type="text" class="form-control" name="name" autocomplete="off" value="<%= wine.name %> ">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" name="varietal" autocomplete="off" value="<%= wine.varietal %> ">
+      </div>
+    </div><br />
+
+    <div class="form-row">
+      <div class="col">
+        <input type="number" class="form-control" name="year" autocomplete="off" value="<%=wine.year%>">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" name="image" autocomplete="off" value="<%= wine.image %> ">
+      </div>
+    </div><br />
+    <div class="form-row">
+      <div class="col">
+        <input type="text" class="form-control" name="url" autocomplete="off" value="<%= wine.url %> ">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" name="rating" autocomplete="off" value="<%= wine.rating %> ">
+      </div>
+    </div> <br />
+    <button type="submit" class="btn btn-success">Update Wine</button>
+  </form>
+
+  <%- include('../partials/footer') %>

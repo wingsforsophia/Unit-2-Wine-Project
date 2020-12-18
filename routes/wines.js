@@ -9,6 +9,8 @@ router.post('/search', isLoggedIn, winesCtrl.search)
 router.get('/:id', isLoggedIn, winesCtrl.show)
 router.post('/:id/winelist', isLoggedIn, winesCtrl.addToWineList)
 router.delete('/:id/winelist', isLoggedIn, winesCtrl.removeFromWineList)
+router.get('/:id/edit', isLoggedIn, winesCtrl.edit)
+router.put('/:id', isLoggedIn, winesCtrl.update)
 
 
 

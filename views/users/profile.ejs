@@ -70,7 +70,7 @@
         <div class="card-body">
         <!-- This is where we'll use a forEach to display winelist items -->
         <% user.wineList.forEach(w => { %>
-          <p><%= w.name %> </p>
+          <p><a href="#"><%= w.name %></a> - <%= w.varietal %> </p>
         <% }) %> 
         </div>
       </div>

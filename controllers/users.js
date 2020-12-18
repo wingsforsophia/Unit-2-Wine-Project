@@ -37,7 +37,8 @@ function show(req, res) {
             res.render('users/show', {
                 title: "User Details",
                 userInfo,
-                user: req.user
+                user: req.user,
+                
             })
         })
 }

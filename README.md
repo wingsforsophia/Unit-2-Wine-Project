@@ -8,10 +8,27 @@ Wine Collecting app designed to be easily used on mobile.
 
 My husband and I love wine, but never remember which ones we tried. This is for people like us to be able to collect and search for wines we have already tried. 
 
+## Getting Started
+
+Find a wine in the All Wines view or add a new wine! Then you can add or remove it from your wine list. 
+
+Invite your friends to join and see which wines they have liked and tried, as well. 
+
 ## Wireframes
 
 ![First wireframe](https://i.imgur.com/mpv0nFe.png)
 ![Second wireframe](https://i.imgur.com/i3bkAo1.png)
+
+## Technologies Used
+
+
+## Next Steps: 
+
+* Add recipes and pairings 
+
+
+
+## Pseudocode
 
 * create new wine
     * render new view

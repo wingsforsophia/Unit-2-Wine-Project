@@ -67,7 +67,7 @@ function addToWineList (req, res) {
   req.user.wineList.push(req.body)
   req.user.save()
   .then(() => {
-      res.redirect(`wines/${req.body.id}`)
+      res.redirect(`/wines/${req.params.id}`)
   })
 }
 
@@ -76,6 +76,6 @@ function removeFromWineList (req, res) {
   req.user.wineList.splice(idx, 1)
   req.user.save()
   .then(() => {
-      res.redirect(`wines/${req.body.id}`)
+      res.redirect(`/wines/${req.params.id}`)
   })
 }

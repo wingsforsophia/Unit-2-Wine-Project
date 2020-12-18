@@ -39,7 +39,7 @@
       
     <!-- This is where we'll put a button to add/remove a game to/from our collection -->
     <!-- This is where we'll put a button to add/remove a game to/from our watchlist -->
-    <% if (user.wineList.some(w => {return w._id === wine._id})) { %>
+    <% if (user.wineList.some(w => {return w.name === wine.name})) { %>
       <form action="/wines/<%= wine._id %>/winelist?_method=DELETE" method="POST">
     <% } else { %>
       <form action="/wines/<%= wine._id %>/winelist" method="POST">
@@ -47,7 +47,7 @@
       <input type="text" hidden name="name" value="<%= wine.name %>">
       <input type="text" hidden name="varietal" value="<%= wine.varietal %>">
       <input type="number" hidden name="year" value="<%= wine.year %>">
-      <button class="btn btn-success"><%= user.wineList.some(w => {return w._id === wine._id}) ? "Remove" : "Add" %></button>
+      <button class="btn btn-success"><%= user.wineList.some(w => {return w.name === wine.name}) ? "Remove from Wine List" : "Add to Wine List" %></button>
     </form>
  
 <%- include('../partials/footer') %>

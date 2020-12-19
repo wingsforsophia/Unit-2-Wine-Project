@@ -37,7 +37,9 @@ const wineSchema = new Schema ({
     url: String, 
     price: [priceSchema],
     reviews: [reviewSchema],
+    region: String, 
     image: String, 
+    description: String,
     pairings: [pairingSchema],
     favoritedBy: [{ type: Schema.Types.ObjectId, ref: "User" }],
 }, {

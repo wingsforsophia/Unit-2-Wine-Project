@@ -20,7 +20,6 @@ const userSchema = new Schema(
     googleId: String,
     bio: String,
     friends: [{ type: Schema.Types.ObjectId, ref: "User" }],
-    favoriteWines: [{ type: Schema.Types.ObjectId, ref: "Wine" }],
     wineList: [wineListSchema]
   },
   {

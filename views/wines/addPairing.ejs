@@ -3,19 +3,19 @@
     <%= title %>
   </h3>
 
-  <form action="/wines/<%= wine._id %>/pairings " method="POST">
+  <form action="/wines/<%= wine._id %>/pairings" method="POST">
     <div class="form-row">
       <div class="col">
         <input type="text" class="form-control" name="pairedWith" autocomplete="off" placeholder="What did you pair it with?">
       </div>
       <div class="col">
-        <input type="text" class="form-control" name="url" placeholder="Recipe Url">
+        <input type="text" class="form-control" name="url" placeholder="Recipe Url" autocomplete="off">
       </div>
     </div><br />
 
     <div class="form-row">
       <div class="col">
-        <input type="number" class="form-control" name="siteName" autocomplete="off" placeholder="Website Name">
+        <input type="text" class="form-control" name="siteName" autocomplete="off" placeholder="Website Name">
       </div>
       <div class="col">
         <input type="text" class="form-control" name="image" autocomplete="off" placeholder="Image URL">
@@ -23,21 +23,13 @@
     </div><br />
     <div class="form-row">
       <div class="col">
-        <input type="text" class="form-control" name="url" autocomplete="off" placeholder="URL">
+        <input type="date" class="form-control" name="date" autocomplete="off" >
       </div>
       <div class="col">
-        <input type="text" class="form-control" name="region" placeholder="Region">
+        <textarea class="form-control"  name="notes" id="exampleFormControlTextarea1"
+          placeholder="How was it?" rows="1"></textarea>
       </div>
     </div> <br />
-    <div class="form-row">
-      <div class="col">
-        <textarea class="form-control" style="width: 50%;" name="description" id="exampleFormControlTextarea1"
-          placeholder="Please add brief description..." rows="2"></textarea>
-      </div>
-    </div>
-
-    </div> <br />
-
     <button type="submit" class="btn btn-success">Add Pairing</button>
-
+</form>
     <%- include('../partials/footer') %>

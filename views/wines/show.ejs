@@ -117,9 +117,10 @@
                     </button>
                 </form>
 
+                <% if (wine.pairings.length) {  %> 
+
                 <form action="/wines/<%= wine._id %>/pairings" method="GET">
                  <button class="btn btn-primary">View Pairings</button>
-
                 </form>
-
+                <% } %> 
                 <%- include('../partials/footer') %>

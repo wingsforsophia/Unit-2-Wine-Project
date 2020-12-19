@@ -11,6 +11,7 @@
         <p class="card-text">Varietal: <%= wine.varietal %></p>
         <p class="card-text">Year: <%= wine.year %></p>
         <a href="/wines/<%= wine._id %>" class="btn btn-primary">Details</a>
+        <a href="/wines/<%= wine.wineId %>/pairings/new" class="btn btn-success">Add Pairing</a>
       </div>
     </div>
 <%  }) %> <br><br>

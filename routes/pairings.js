@@ -2,7 +2,7 @@ const router = require("express").Router();
 const pairingsCtrl = require("../controllers/pairings");
 
 
-
+router.get('/:id/pairings/new', isLoggedIn, pairingsCtrl.new)
 
 
 function isLoggedIn(req, res, next) {

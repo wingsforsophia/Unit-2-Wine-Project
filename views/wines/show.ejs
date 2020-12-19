@@ -12,7 +12,7 @@
       <!-- This is the tab header for the list of who has the game in their collection -->
       <li class="nav-item">
         <a class="nav-link" id="favorited-tab" data-toggle="tab" href="#favorited" role="tab" aria-controls="favorited"
-          aria-selected="false">Favorited By</a>
+          aria-selected="false" >Favorited By</a>
       </li>
       <!-- This is the tab header for reviews -->
       <li class="nav-item">
@@ -69,6 +69,8 @@
                     <input type="text" hidden name="name" value="<%= wine.name %>">
                     <input type="text" hidden name="varietal" value="<%= wine.varietal %>">
                     <input type="number" hidden name="year" value="<%= wine.year %>">
+                    <input type="text" hidden name="wineId" value="<%= wine._id %>">
+                    <input type="text" hidden name="wineImage" value="<%= wine.image %>">
                     <button class="btn btn-success">
                       <%= user.wineList.some(w=> {return w.name === wine.name}) ? "Remove from Wine List" : "Add to Wine List" %>
                     </button>

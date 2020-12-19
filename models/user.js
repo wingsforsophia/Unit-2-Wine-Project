@@ -4,7 +4,9 @@ const Schema = mongoose.Schema;
 const wineListSchema = new Schema({
   name: String,
   varietal: String,
-  year: Number
+  year: Number,
+  wineId: String,
+  wineImage: String
 }, {
   timestamps: true
 })

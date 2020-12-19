@@ -68,7 +68,9 @@ function show(req, res) {
                     title: "Details",
                     user: req.user,
                     wine,
-                    favoritedBy: wine.favoritedBy
+                    favoritedBy: wine.favoritedBy,
+                    wineId: wine._id,
+                    reviews: wine.reviews
 
             })
             })

@@ -4,6 +4,7 @@ const pairingsCtrl = require("../controllers/pairings");
 
 router.get('/:id/pairings/new', isLoggedIn, pairingsCtrl.new)
 router.post('/:id/pairings', isLoggedIn, pairingsCtrl.create)
+router.get('/:id/pairings', isLoggedIn, pairingsCtrl.index)
 
 
 function isLoggedIn(req, res, next) {

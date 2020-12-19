@@ -3,7 +3,8 @@ const Wine = require("../models/wine")
 
 module.exports = {
    new: newPairing,
-   create
+   create,
+   index
  }
 
  function newPairing (req, res) {
@@ -28,3 +29,16 @@ module.exports = {
     }) 
    })
  }
+
+ function index (req, res) {
+   Wine.findById(req.params.id)
+   .then((wine) => {
+    res.render('wines/pairingsIndex', {
+      title: "All Pairings",
+      user: req.user,
+      pairings: wine.pairings
+    })     
+   })
+ }
+
+

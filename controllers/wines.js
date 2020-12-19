@@ -1,4 +1,3 @@
-const wine = require('../models/wine')
 const Wine = require('../models/wine')
 
 module.exports = {

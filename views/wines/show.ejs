@@ -48,7 +48,7 @@
         <% let total = 0 %>
         <% reviews.forEach(r => { %>
           <% total+= r.rating %>
-          <p><%= r.rating %> - <img width="20" id="avatarPhoto" src="<%= r.reviewerPhoto %>" alt="Reviewer photo"> <%= r.reviewer %></p>
+          <p><%= r.rating %> - <img width="20" id="avatarPhoto" src="<%= r.reviewerAvatar %>" alt="Reviewer photo"> <%= r.reviewer %></p>
           <p><%= r.content %></p>
         <% }) %>
         <p>WineCellar Rating: <%= (total / reviews.length).toFixed(2) %></p>

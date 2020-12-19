@@ -1,13 +1,13 @@
 <%- include('../partials/header') %>
   <h3>
-    <%= title %>
+    <%= title  %> - Click for Details
   </h3>
 
   <% wines.forEach((wine)=> { %>
 
     <div class="list-group">
       <a href="/wines/<%= wine._id %>" class="list-group-item list-group-item-action">
-        <%= wine.name %> - <%= wine.varietal %> - <%= wine.year %>
+        <%= wine.name %> - <%= wine.varietal %> - <%= wine.year %> 
       </a>
     </div>
     <% }) %>

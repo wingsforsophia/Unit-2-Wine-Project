@@ -30,6 +30,8 @@
           placeholder="How was it?" rows="1"></textarea>
       </div>
     </div> <br />
+    <input type="text" hidden name="pairer" value="<%= user.name %>">
+            <input type="text" hidden name="pairerAvatar" value="<%= user.avatar %>"> 
     <button type="submit" class="btn btn-success">Add Pairing</button>
 </form>
     <%- include('../partials/footer') %>

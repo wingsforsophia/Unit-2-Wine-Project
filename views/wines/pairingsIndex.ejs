@@ -2,13 +2,31 @@
   <h3>
     <%= title  %> 
   </h3>
-<ul>
+
   <% pairings.forEach((p)=> { %>
 
-    <li><%= p.siteName %> </li>
+    
+
+
+    <div class="card" style="width: 18rem;">
+        <img src="<%= p.image %>" class="card-img-top" alt="image of the recipe">
+        <div class="card-body">
+
+<% if (p.pairedWith != "") { %> 
+          <h5 class="card-title"><%= p.pairedWith %> </h5>
+          <% } %> 
+          
+          <p class="card-text">Site Name:<%= p.siteName %></p>
+          <p class="card-text">Notes: <%= p.notes %></p>
+          <!-- <a href="#" class="btn btn-primary">X</a>
+          <a href="#" class="btn btn-success">X</a> -->
+        </div>
+      </div>
+
+
 
     <% }) %>
-  </ul>
+ 
 
 
       <%- include('../partials/footer') %>

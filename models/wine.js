@@ -20,7 +20,9 @@ const reviewSchema = new Schema ({
 })
 
 const pairingSchema = new Schema ({
-    pariedWith: String, 
+    pairer: String,
+    pairerAvatar: String,
+    pairedWith: String, 
     url: String,
     siteName: String, 
     image: String,

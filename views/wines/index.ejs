@@ -1,28 +1,15 @@
 <%- include('../partials/header') %>
-<h3>
-  <%= title %>
-</h3>
+  <h3>
+    <%= title %>
+  </h3>
 
+  <% wines.forEach((wine)=> { %>
 
+    <div class="list-group">
+      <a href="/wines/<%= wine._id %>" class="list-group-item list-group-item-action">
+        <%= wine.name %> - <%= wine.varietal %> - <%= wine.year %>
+      </a>
+    </div>
+    <% }) %>
 
-  
-  <% wines.forEach((wine) => { %>
-
-    <div class="card" style="width: 18rem;" id="wineList">
-      <img src="<%= wine.image %> " class="card-img-top" alt="image of the wine bottle">
-      <div class="card-body">
-        <h5 class="card-title"> <%= wine.name %> </h5>
-    
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item"><%= wine.varietal %> - <%= wine.year %> </li>
-           </ul>
-      <div class="card-body">
-        <a href="/wines/<%= wine._id %> " class="card-link">More Details</a>
-        <!-- <a href="#" class="card-link">Edit Wine</a> -->
-      </div>
-    </div><br>
-    <% })  %> 
-    
-
-  <%- include('../partials/footer') %>
+      <%- include('../partials/footer') %>

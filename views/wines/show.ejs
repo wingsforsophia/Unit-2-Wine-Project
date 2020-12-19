@@ -30,6 +30,8 @@
           </p>
           <p class="card-text">Year: <%= wine.year %>
           </p>
+         
+          </p>
           <p class="card-text"> <a href="<%= wine.url %>" target="_blank">More info at Total Wine</a></p>
 
 
@@ -50,8 +52,8 @@
           <% total+= r.rating %>
           <p><%= r.rating %> - <img width="20" id="avatarPhoto" src="<%= r.reviewerAvatar %>" alt="Reviewer photo"> <%= r.reviewer %></p>
           <p><%= r.content %></p>
-        <% }) %>
-        <p>WineCellar Rating: <%= (total / reviews.length).toFixed(2) %></p>
+          <% }) %>
+          <p>WineCellar Rating: <%= (total / reviews.length).toFixed(2) %></p>
         <% if (!reviews.some(u => {return u.reviewer === user.name})) { %>
           <form action="/wines/<%= wineId %>/reviews" method="POST">
             <div class="form-group">

@@ -3,19 +3,19 @@
     <%= title %>
   </h3>
 
-  <form action="/wines" method="POST">
+  <form action="/wines/<%= wine._id %>/pairings " method="POST">
     <div class="form-row">
       <div class="col">
-        <input type="text" class="form-control" name="name" autocomplete="off" placeholder="Wine Name">
+        <input type="text" class="form-control" name="pairedWith" autocomplete="off" placeholder="What did you pair it with?">
       </div>
       <div class="col">
-        <input type="text" class="form-control" name="varietal" placeholder="Varietal">
+        <input type="text" class="form-control" name="url" placeholder="Recipe Url">
       </div>
     </div><br />
 
     <div class="form-row">
       <div class="col">
-        <input type="number" class="form-control" name="year" autocomplete="off" placeholder="Year">
+        <input type="number" class="form-control" name="siteName" autocomplete="off" placeholder="Website Name">
       </div>
       <div class="col">
         <input type="text" class="form-control" name="image" autocomplete="off" placeholder="Image URL">
@@ -38,6 +38,6 @@
 
     </div> <br />
 
-    <button type="submit" class="btn btn-success">Add Wine</button>
+    <button type="submit" class="btn btn-success">Add Pairing</button>
 
     <%- include('../partials/footer') %>

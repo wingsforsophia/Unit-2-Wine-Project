@@ -6,8 +6,13 @@ module.exports = {
  }
 
  function newPairing (req, res) {
-  res.render('wines/addPairing', {
-      title: "Add New Pairing",
-      user: req.user
-        })
+  Wine.findById(req.params.id)
+  .then((wine) => {
+    res.render('wines/addPairing', {
+        title: "Add New Pairing",
+        user: req.user,
+        wine
+          })
+
+  }) 
  }

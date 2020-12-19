@@ -1,33 +1,45 @@
 <%- include('../partials/header') %>
 
-<h3><%= title %></h3>
+  <h3>
+    <%= title %>
+  </h3>
 
-<div class="card" style="width: 18rem;">
-  <img id="avatarPhoto" style="height: 18rem;" class="card-img-top" src="<%= userInfo.avatar %>" alt="Card image cap">
-  <div class="card-header">
-  </div>
-  <div class="card-body">
-    <h5 class="card-title"><%= userInfo.name %></h5>
-    <!-- Let's clean up the date data to show the day the user joined -->
-    <p class="card-text">Joined: <%= userInfo.createdAt.toLocaleString().split(',')[0] %></p>
-    <p class="card-text">Email: <a href="mailto:<%= userInfo.email %>"><%= userInfo.email %></a></p>
-    <p class="card-text">Favorite Wines:</p>
-    <!-- This is where we'll iterate over the wines with a forEach -->
+  <div class="card" style="width: 18rem;">
+    <img id="avatarPhoto" style="height: 18rem;" class="card-img-top" src="<%= userInfo.avatar %>" alt="Card image cap">
+    <div class="card-header">
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">
+        <%= userInfo.name %>
+      </h5>
+      <!-- Let's clean up the date data to show the day the user joined -->
+      <p class="card-text">Joined: <%= userInfo.createdAt.toLocaleString().split(',')[0] %>
+      </p>
+      <p class="card-text">Email: <a href="mailto:<%= userInfo.email %>">
+          <%= userInfo.email %>
+        </a></p>
+      <p class="card-text">Favorite Wines:</p>
+      <!-- This is where we'll iterate over the wines with a forEach -->
+
+      <ul>
+        <% wines.forEach(wine=> { %>
+          <li>
+            <a href="/wines/<%= wine._id %>">
+              <%= wine.name %> - <%= wine.varietal %>
+            </a>
+          </li>
+          <% }) %>
+      </ul><br><br>
 
 
-    <% wines.forEach(wine => { %>
-       <a href="/wines/<%= wine._id %>"><%= wine.name %> - <%= wine.varietal %> </a>
-  <%  }) %> <br><br>
-
-
-    <% if (!userInfo._id.equals(user._id) && !user.friends.includes(userInfo._id)) { %>
+      <% if (!userInfo._id.equals(user._id) && !user.friends.includes(userInfo._id)) { %>
         <a href="/users/<%= userInfo._id %>/friend" class="btn btn-primary">Add Friend</a>
-      <% } %>
-      <% if (!userInfo._id.equals(user._id) && user.friends.includes(userInfo._id)) { %>
-        <a href="/users/<%= userInfo._id %>/unfriend" class="btn btn-primary">Remove Friend</a>
-      <% } %>
-    
-  </div>
-</div>
+        <% } %>
+          <% if (!userInfo._id.equals(user._id) && user.friends.includes(userInfo._id)) { %>
+            <a href="/users/<%= userInfo._id %>/unfriend" class="btn btn-primary">Remove Friend</a>
+            <% } %>
 
-<%- include('../partials/footer') %>
+    </div>
+  </div>
+
+  <%- include('../partials/footer') %>

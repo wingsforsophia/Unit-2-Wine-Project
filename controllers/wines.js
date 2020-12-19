@@ -60,10 +60,16 @@ function search(req, res) {
 function show(req, res) {
     Wine.findById(req.params.id)
         .then((wine) => {
-            res.render(`wines/show`, {
-                title: "Details",
-                user: req.user,
-                wine
+            Wine.findOne({_id: wine.id})
+            .populate('favoritedBy')
+            .then((wine) => {
+                res.render(`wines/show`, {
+                    title: "Details",
+                    user: req.user,
+                    wine,
+                    favoritedBy: wine.favoritedBy
+
+            })
             })
         })
 

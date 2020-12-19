@@ -11,6 +11,8 @@ router.post('/:id/winelist', isLoggedIn, winesCtrl.addToWineList)
 router.delete('/:id/winelist', isLoggedIn, winesCtrl.removeFromWineList)
 router.get('/:id/edit', isLoggedIn, winesCtrl.edit)
 router.put('/:id', isLoggedIn, winesCtrl.update)
+router.post('/:id/favorites', isLoggedIn, winesCtrl.addToFavorites)
+router.delete('/:id/favorites', isLoggedIn, winesCtrl.removeFromFavorites)
 
 
 

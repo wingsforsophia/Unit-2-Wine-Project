@@ -1,3 +1,4 @@
+const wine = require('../models/wine')
 const Wine = require('../models/wine')
 
 module.exports = {
@@ -9,41 +10,43 @@ module.exports = {
     addToWineList,
     removeFromWineList,
     edit,
-    update
+    update,
+    addToFavorites,
+    removeFromFavorites
 }
 
 function newWine(req, res) {
-  
+
     res.render('wines/new', {
-        title: "Add New Wine", 
-        user: req.user, 
+        title: "Add New Wine",
+        user: req.user,
         results: null
+    })
+}
+
+function create(req, res) {
+    Wine.create(req.body)
+        .then(() => {
+            res.redirect('/wines')
+        })
+    // .catch((err) => {
+    //     console.log(err)
+    //     })
+}
+
+function index(req, res) {
+    Wine.find({})
+        .then((wines) => {
+            res.render('wines/index', {
+                title: "All Wines",
+                user: req.user,
+                wines
+            })
         })
 }
 
-function create (req, res) {
-Wine.create(req.body)
-.then(() => {
-  res.redirect('/wines')
-})
-// .catch((err) => {
-//     console.log(err)
-//     })
-}
-
-function index (req, res) {
-   Wine.find({})
-    .then((wines) => {
-        res.render('wines/index', {
-            title: "All Wines",
-            user: req.user,
-            wines
-        })
-    }) 
-    }
-
-    function search (req, res) {
-     Wine.find(`${req.body.query}`)
+function search(req, res) {
+    Wine.find(`${req.body.query}`)
         .then((result) => {
             console.log(result)
             res.render('wines/index', {
@@ -52,52 +55,76 @@ function index (req, res) {
                 result
             })
         })
-    }
+}
 
-function show (req, res) {
-  Wine.findById(req.params.id)
-  .then((wine) => {
-      res.render(`wines/show`, {
-          title: "Details",
-          user: req.user,
-          wine
-      })
-  })
+function show(req, res) {
+    Wine.findById(req.params.id)
+        .then((wine) => {
+            res.render(`wines/show`, {
+                title: "Details",
+                user: req.user,
+                wine
+            })
+        })
 
 }
 
-function addToWineList (req, res) {
-  req.user.wineList.push(req.body)
-  req.user.save()
-  .then(() => {
-      res.redirect(`/wines/${req.params.id}`)
-  })
+function addToWineList(req, res) {
+    req.user.wineList.push(req.body)
+    req.user.save()
+        .then(() => {
+            res.redirect(`/wines/${req.params.id}`)
+        })
 }
 
-function removeFromWineList (req, res) {
-  let idx = req.user.wineList.findIndex((w) => w._id === req.params.id)  
-  req.user.wineList.splice(idx, 1)
-  req.user.save()
-  .then(() => {
-      res.redirect(`/wines/${req.params.id}`)
-  })
+function removeFromWineList(req, res) {
+    let idx = req.user.wineList.findIndex((w) => w._id === req.params.id)
+    req.user.wineList.splice(idx, 1)
+    req.user.save()
+        .then(() => {
+            res.redirect(`/wines/${req.params.id}`)
+        })
 }
 
-function edit (req, res) {
-  Wine.findById(req.params.id)
-  .then((wine) => {
-      res.render('wines/edit', {
-          title: "Edit Wine",
-          user: req.user,
-          wine
-      })
-  })  
+function edit(req, res) {
+    Wine.findById(req.params.id)
+        .then((wine) => {
+            res.render('wines/edit', {
+                title: "Edit Wine",
+                user: req.user,
+                wine
+            })
+        })
 }
 
-function update (req, res) {
-    Wine.findByIdAndUpdate(req.params.id, req.body, {new: true})
-    .then((wine) => {
-        res.redirect(`/wines/${req.params.id}`)
+function update(req, res) {
+    Wine.findByIdAndUpdate(req.params.id, req.body, { new: true })
+        .then(() => {
+            res.redirect(`/wines/${req.params.id}`)
 
-    })
+        })
+}
+
+function addToFavorites(req, res) {
+    Wine.findById(req.params.id)
+        .then((wine) => {
+            wine.favoritedBy.push(req.user._id)
+            wine.save()
+                .then(() => {
+                    res.redirect(`/wines/${req.params.id}`)
+                })
+        })
+
+}
+
+function removeFromFavorites(req, res) {
+    Wine.findById(req.params.id)
+        .then((wine) => {
+            let idx = wine.favoritedBy.indexOf(req.user._id)
+            wine.favoritedBy.splice(idx, 1)
+            wine.save()
+            .then(() => {
+                res.redirect(`/wines/${req.params.id}`)
+            })
+        })
 }

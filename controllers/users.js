@@ -34,12 +34,15 @@ function update(req, res) {
 function show(req, res) {
     User.findById(req.params.id)
         .then((userInfo) => {
-            res.render('users/show', {
-                title: "User Details",
-                userInfo,
-                user: req.user,
-                
+            Wine.find({ favoritedBy: userInfo._id })
+            .then((wines) => {
+                res.render('users/show', {
+                    title: "User Details",
+                    userInfo,
+                    user: req.user,
+                    wines
             })
+             })
         })
 }
 

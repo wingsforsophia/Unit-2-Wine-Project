@@ -3,6 +3,7 @@ const winesCtrl = require('../controllers/wines')
 const wine = require('../models/wine')
 
 router.get('/', isLoggedIn, winesCtrl.index)
+router.get('/mywines', isLoggedIn, winesCtrl.myWines)
 router.get('/new', isLoggedIn, winesCtrl.new)
 router.post('/', isLoggedIn, winesCtrl.create)
 router.post('/search', isLoggedIn, winesCtrl.search)

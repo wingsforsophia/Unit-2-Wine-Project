@@ -1,0 +1,17 @@
+<%- include('../partials/header') %>
+
+<h3><%= title %> </h3>
+
+<% user.wineList.forEach(wine => { %>
+  <div class="card" style="width: 18rem;">
+    <img src="<%= wine.image %>" class="card-img-top" alt="image of the wine bottle">
+    <div class="card-body">
+      <h5 class="card-title"><%= wine.name %> </h5>
+      <p class="card-text">Varietal: <%= wine.varietal %></p>
+      <p class="card-text">Year: <%= wine.year %></p>
+      <a href="/wines/<%= wine._id %>" class="btn btn-primary">Details</a>
+    </div>
+  </div>
+<% }) %>
+
+<%- include('../partials/footer') %>

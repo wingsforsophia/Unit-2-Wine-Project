@@ -12,7 +12,8 @@ module.exports = {
     edit,
     update,
     addToFavorites,
-    removeFromFavorites
+    removeFromFavorites,
+    myWines
 }
 
 function newWine(req, res) {
@@ -133,4 +134,15 @@ function removeFromFavorites(req, res) {
                 res.redirect(`/wines/${req.params.id}`)
             })
         })
+}
+
+function myWines (req, res) {
+    Wine.find({favoritedBy: req.user._id})
+    .then((wines) => {
+        res.render('wines/mywines', {
+            title: "Wines I've Tried",
+            user: req.user,
+            wines
+        })
+    })
 }

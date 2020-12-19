@@ -2,10 +2,13 @@
   <h3>
     <%= title  %> 
   </h3>
-
+<ul>
   <% pairings.forEach((p)=> { %>
 
-   
+    <li><%= p.siteName %> </li>
+
     <% }) %>
+  </ul>
+
 
       <%- include('../partials/footer') %>

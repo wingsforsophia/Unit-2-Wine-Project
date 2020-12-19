@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const reviewsCtrl = require("../controllers/reviews");
+const pairingsCtrl = require("../controllers/pairings");
 
 
 

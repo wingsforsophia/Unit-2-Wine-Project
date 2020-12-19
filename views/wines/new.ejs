@@ -9,7 +9,7 @@
         <input type="text" class="form-control" name="name" autocomplete="off" placeholder="Wine Name">
       </div>
       <div class="col">
-        <input type="text" class="form-control" name="varietal" autocomplete="off" placeholder="Varietal">
+        <input type="text" class="form-control" name="varietal" placeholder="Varietal">
       </div>
     </div><br />
 
@@ -26,10 +26,18 @@
         <input type="text" class="form-control" name="url" autocomplete="off" placeholder="URL">
       </div>
       <div class="col">
-        <textarea class="form-control" name="description" id="exampleFormControlTextarea1" placeholder="Please add brief description..." rows="2"></textarea>
+        <input type="text" class="form-control" name="region" placeholder="Region">
       </div>
     </div> <br />
-    <button type="submit" class="btn btn-success">Add Wine</button>
-  </form>
+    <div class="form-row">
+      <div class="col">
+        <textarea class="form-control" style="width: 50%;" name="description" id="exampleFormControlTextarea1"
+          placeholder="Please add brief description..." rows="2"></textarea>
+      </div>
+    </div>
 
-  <%- include('../partials/footer') %>
+    </div> <br />
+
+    <button type="submit" class="btn btn-success">Add Wine</button>
+
+    <%- include('../partials/footer') %>

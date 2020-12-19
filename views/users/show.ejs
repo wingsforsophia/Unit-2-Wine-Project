@@ -14,6 +14,13 @@
     <p class="card-text">Email: <a href="mailto:<%= userInfo.email %>"><%= userInfo.email %></a></p>
     <p class="card-text">Favorite Wines:</p>
     <!-- This is where we'll iterate over the wines with a forEach -->
+
+
+    <% wines.forEach(wine => { %>
+       <a href="/wines/<%= wine._id %>"><%= wine.name %> - <%= wine.varietal %> </a>
+  <%  }) %> <br><br>
+
+
     <% if (!userInfo._id.equals(user._id) && !user.friends.includes(userInfo._id)) { %>
         <a href="/users/<%= userInfo._id %>/friend" class="btn btn-primary">Add Friend</a>
       <% } %>

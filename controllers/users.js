@@ -34,7 +34,7 @@ function update(req, res) {
 function show(req, res) {
     User.findById(req.params.id)
         .then((userInfo) => {
-            Wine.find({favoritedBy: userInfo._id })
+            Wine.find({ favoritedBy: userInfo._id })
             .then((wines) => {
                 res.render('users/show', {
                     title: "User Details",

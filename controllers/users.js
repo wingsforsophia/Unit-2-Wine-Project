@@ -20,7 +20,7 @@ function showProfile(req, res) {
     User.findById(req.user._id)
     .populate('friends')
     .then((user) => {
-        res.render('users/profile', { title: "Profile Page", user })
+        res.render('users/profile', { title: "My Profile Page", user })
         })
 }
 

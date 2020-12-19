@@ -12,7 +12,8 @@ module.exports = {
     update,
     addToFavorites,
     removeFromFavorites,
-    myWines
+    myWines,
+    showFavorites
 }
 
 function newWine(req, res) {
@@ -147,3 +148,14 @@ function myWines (req, res) {
         })
     })
 }
+
+function showFavorites (req, res) {
+    Wine.find({ favoritedBy: req.user._id })
+    .then((wines) => {
+        res.render('users/myfavorites', {
+            title: "My Favorites",
+            user: req.user,
+            wines   
+        })
+    })
+}    

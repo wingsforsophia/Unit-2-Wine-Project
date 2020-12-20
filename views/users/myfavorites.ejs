@@ -2,7 +2,7 @@
   <h3>
     <%= title  %>
   </h3>
-
+<div class="wineCard">
   <% wines.forEach(wine => { %>
     <div class="card shadow p-3 mb-5 bg-white rounded text-center ml-5" style="width: 18rem;">
       <img src="<%= wine.image %>" class="card-img-top" alt="image of the wine bottle">
@@ -22,5 +22,5 @@
       </div>
     </div>
 <%  }) %> 
-
+</div>
   <%- include('../partials/footer') %>

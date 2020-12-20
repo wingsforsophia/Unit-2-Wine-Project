@@ -31,7 +31,8 @@
       </div>
     </div> <br />
     <input type="text" hidden name="pairer" value="<%= user.name %>">
-            <input type="text" hidden name="pairerAvatar" value="<%= user.avatar %>"> 
+    <input type="text" hidden name="pairerAvatar" value="<%= user.avatar %>"> 
+    <input type="text" hidden name="wineId" value="<%= wine._id %>"> 
     <button type="submit" class="btn btn-success">Add Pairing</button>
 </form>
     <%- include('../partials/footer') %>

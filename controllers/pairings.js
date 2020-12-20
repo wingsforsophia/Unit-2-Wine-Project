@@ -4,7 +4,8 @@ const Wine = require("../models/wine")
 module.exports = {
    new: newPairing,
    create,
-   index
+   index,
+   delete: deletePairing
  }
 
  function newPairing (req, res) {
@@ -36,9 +37,22 @@ module.exports = {
     res.render('wines/pairingsIndex', {
       title: "All Pairings",
       user: req.user,
-      pairings: wine.pairings
+      wine
     })     
    })
  }
 
+
+function deletePairing (req, res) {
+ Wine.findById(req.params.id)
+ .then((wine) => {
+  const idx = wine.pairings.findIndex(pairing => pairing._id == req.params.pairingId) 
+  wine.pairings.splice(idx, 1)
+  wine.save()
+  .then(() => {
+      res.redirect(`/wines/${req.params.id}`)
+    })
+  
+ }) 
+}
 

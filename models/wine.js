@@ -27,7 +27,8 @@ const pairingSchema = new Schema ({
     siteName: String, 
     image: String,
     date: Date,
-    notes: String
+    notes: String,
+    wineId: String
 }, {
     timestamps: true
 })

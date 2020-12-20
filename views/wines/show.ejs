@@ -2,7 +2,7 @@
   <h3>
     <%= wine.name %>
   </h3>
-  <div class="card" style="width: 24rem;">
+  <div class="card shadow p-3 mb-5 bg-white rounded text-center" style="width: 24rem;">
     <img src="<%= wine.image %> " class="card-img-top" alt="image of the wine bottle">
     <ul class="nav nav-tabs" id="myTab" role="tablist">
       <li class="nav-item">
@@ -29,11 +29,11 @@
           <p class="card-text"> <%= wine.description %>
           </p>
 
-          <p class="card-text">Varietal: <%= wine.varietal %>
+          <p class="card-text"><%= wine.varietal %>
           </p>
 
           <% if (wine.year != null ) { %> 
-          <p class="card-text">Year: <%= wine.year %>
+          <p class="card-text"><%= wine.year %>
           </p>
          <% } %> 
           </p>

@@ -43,7 +43,7 @@
           <% if (wine.websiteName) { %> 
             <p class="card-text"> <a href="<%= wine.url %>" target="_blank">  More info at <%= wine.websiteName %> </a></p>
           <% } else { %> 
-                   <p class="card-text"> <a href="<%= wine.url %>" target="_blank">  More info on the Web</a></p>
+                   <p class="card-text"> <a href="<%= wine.url %>" target="_blank">  More details online</a></p>
         <% } %> 
         </div>
       </div>
@@ -130,7 +130,7 @@
                 <% } %> 
 
                 <% if (user.email === "shseremetis@gmail.com") { %>
-                  <form action="#">
+                  <form action="/wines/<%= wine._id %>/edit">
                     <button type="submit" >Edit</button>
                   </form>
 

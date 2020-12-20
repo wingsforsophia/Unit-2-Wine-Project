@@ -9,13 +9,16 @@
       <div class="card-body">
         <h5 class="card-title"><%= wine.name %> </h5>
         <p class="card-text"> <%= wine.varietal %></p>
-
-
         <% if (wine.year != null) { %>  
 
 
           <p class="card-text"><%= wine.year %></p>
           <% } %> 
+
+          <% if (wine.realPrice) { %> 
+            <p class="card-text"><%= wine.realPrice %>
+            </p>
+           <% } %> 
        
         <a href="/wines/<%= wine._id %>" class="btn btn-primary">Details</a>
         <a href="/wines/<%= wine._id %>/pairings/new" class="btn btn-success">Add Pairing</a>

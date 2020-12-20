@@ -47,7 +47,7 @@ const wineSchema = new Schema ({
     description: String,
     pairings: [pairingSchema],
     favoritedBy: [{ type: Schema.Types.ObjectId, ref: "User" }],
-    siteName: String
+    websiteName: String
 }, {
     timestamps: true
 })

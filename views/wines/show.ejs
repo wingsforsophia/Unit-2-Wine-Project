@@ -40,8 +40,11 @@
           <p class="card-text"><%= wine.realPrice %>
           </p>
          <% } %> 
-                   <p class="card-text"> <a href="<%= wine.url %>" target="_blank">More info at Total Wine</a></p>
-        
+          <% if (wine.websiteName) { %> 
+            <p class="card-text"> <a href="<%= wine.url %>" target="_blank">  More info at <%= wine.websiteName %> </a></p>
+          <% } else { %> 
+                   <p class="card-text"> <a href="<%= wine.url %>" target="_blank">  More info on the Web</a></p>
+        <% } %> 
         </div>
       </div>
       <!-- This is the tab that will contain our forEach loop indicating who has the game in their collection -->

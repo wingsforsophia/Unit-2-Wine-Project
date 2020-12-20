@@ -6,42 +6,42 @@
   <form action="/wines/<%= wine._id %>?_method=PUT" method="POST">
     <div class="form-row">
       <div class="col">
-        <input type="text" class="form-control" name="name" value="<%= wine.name %> ">
+        <input type="text" class="form-control" autocomplete="off" name="name" placeholder="Wine Name" value="<%= wine.name %> ">
       </div>
       <div class="col">
-        <input type="text" class="form-control" name="varietal" value="<%= wine.varietal %> ">
+        <input type="text" class="form-control" name="varietal" placeholder="Varietal" value="<%= wine.varietal %> ">
       </div>
     </div><br />
 
     <div class="form-row">
       <div class="col">
-        <input type="number" class="form-control" name="year" value="<%= wine.year %>"  >
+        <input type="number" class="form-control" name="year" placeholder="Year" value="<%= wine.year %>"  >
       </div>
       <div class="col">
-        <input type="text" class="form-control" name="image" value="<%= wine.image %> ">
+        <input type="text" class="form-control" name="image" autocomplete="off" placeholder="Image Url" value="<%= wine.image %> ">
       </div>
     </div><br />
     <div class="form-row">
       <div class="col">
-        <input type="text" class="form-control" name="url" value="<%= wine.url %> ">
+        <input type="text" class="form-control" name="url" autocomplete="off" placeholder="Website Url" value="<%= wine.url %> ">
       </div>
       <div class="col">
-        <input type="text" class="form-control" name="websiteName" value="<%= wine.websiteName %>">
+        <input type="text" class="form-control" name="websiteName" placeholder="Website Name" value="<%= wine.websiteName %>">
       </div>
 
     </div> <br />
     <div class="form-row">
       <div class="col">
-        <input type="text" class="form-control" name="region" value="<%= wine.region %>">
+        <input type="text" class="form-control" name="region" placeholder="Region" value="<%= wine.region %>">
       </div>
       <div class="col">
-        <input type="text" class="form-control" name="realPrice" value="<%= wine.realPrice %>">
+        <input type="text" class="form-control" name="realPrice" placeholder="Price" value="<%= wine.realPrice %>">
       </div>
     </div>
     </div> <br />
     <div class="form-row">
        <div class="col">
-        <input type="text" name="description" class="form-control" value="<%= wine.description %> ">
+        <input type="text" name="description" autocomplete="off" placeholder="Description" class="form-control" value="<%= wine.description %>">
 
       </div>
     </div>

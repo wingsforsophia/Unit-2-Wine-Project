@@ -62,7 +62,7 @@
         <% let total = 0 %>
         <% reviews.forEach(r => { %>
           <% total+= r.rating %>
-          <p><b><%= r.rating %> </b>- <img width="20" id="avatarPhoto" src="<%= r.reviewerAvatar %>" alt="Reviewer photo"> <%= r.reviewer %></p>
+          <p><b><%= r.rating %> </b>- <img width="20" id="avatarPhoto" style="border-radius: 100%;" src="<%= r.reviewerAvatar %>" alt="Reviewer photo"> <%= r.reviewer %></p>
           <p><%= r.content %></p>
           <% }) %>
           <% if (wine.reviews.length) { %> 

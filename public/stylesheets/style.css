@@ -9,5 +9,7 @@ nav {
 
 }
 
-
-
+.wineCard {
+  display: flex;
+  flex-flow: wrap-reverse;
+}

@@ -1,9 +1,9 @@
 <%- include('../partials/header') %>
 
 <h3><%= title %> </h3>
-
+<div class="wineCard">
 <% user.wineList.forEach(wine => { %>
-  <div class="card shadow p-3 mb-5 bg-white rounded text-center" style="width: 18rem;">
+  <div class="card shadow p-3 mb-5 bg-white rounded text-center ml-5" style="width: 18rem;">
     <img src="<%= wine.wineImage %>" class="card-img-top" alt="image of the wine bottle">
     <div class="card-body">
       <h5 class="card-title"><%= wine.name %> </h5>
@@ -17,5 +17,5 @@
     </div>
   </div>
 <% }) %>
-
+</div>
 <%- include('../partials/footer') %>

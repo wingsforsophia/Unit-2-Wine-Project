@@ -19,8 +19,10 @@
           <a href="<%= p.url %>" target="_blank"> Full recipe on <%= p.siteName %></a> 
           
           <p class="card-text">Paired by <%= p.pairer %><img width="20" id="avatarPhoto" style="border-radius: 100%;" src="<%= p.pairerAvatar %>" alt="Pairer photo"></p>
-        <p>"<%= p.notes %>"</p>
 
+          <% if (p.notes != "") { %> 
+        <p>"<%= p.notes %>"</p>
+            <% } %> 
              <form action="/wines/<%= p.wineId %>/pairings/<%= p._id %>?_method=DELETE" method="POST">
           <button type="submit" class="btn btn-danger">Delete</button>
         </form>

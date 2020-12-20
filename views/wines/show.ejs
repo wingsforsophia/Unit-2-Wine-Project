@@ -36,8 +36,11 @@
           <p class="card-text"><%= wine.year %>
           </p>
          <% } %> 
+         <% if (wine.realPrice) { %> 
+          <p class="card-text"><%= wine.realPrice %>
           </p>
-          <p class="card-text"> <a href="<%= wine.url %>" target="_blank">More info at Total Wine</a></p>
+         <% } %> 
+                   <p class="card-text"> <a href="<%= wine.url %>" target="_blank">More info at Total Wine</a></p>
         
         </div>
       </div>

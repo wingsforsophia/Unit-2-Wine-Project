@@ -3,32 +3,51 @@
     <%= title %>
   </h3>
 
-  <form action="/wines/<%= wine._id %>?_method=PUT" method="POST">
+  <form action="/wines" method="POST">
     <div class="form-row">
       <div class="col">
-        <input type="text" class="form-control" name="name" autocomplete="off" value="<%= wine.name %> ">
+        <input type="text" class="form-control" name="name" value="<%= wine.name %> ">
       </div>
       <div class="col">
-        <input type="text" class="form-control" name="varietal" autocomplete="off" value="<%= wine.varietal %> ">
+        <input type="text" class="form-control" name="varietal" value="<%= wine.varietal %> ">
       </div>
     </div><br />
 
     <div class="form-row">
       <div class="col">
-        <input type="number" class="form-control" name="year" autocomplete="off" value="<%=wine.year%>">
+        <input type="number" class="form-control" name="year" value="<%= wine.year %> ">
       </div>
       <div class="col">
-        <input type="text" class="form-control" name="image" autocomplete="off" value="<%= wine.image %> ">
+        <input type="text" class="form-control" name="image" value="<%= wine.image %> ">
       </div>
     </div><br />
     <div class="form-row">
       <div class="col">
-        <input type="text" class="form-control" name="url" autocomplete="off" value="<%= wine.url %> ">
+        <input type="text" class="form-control" name="url" value="<%= wine.url %> ">
       </div>
       <div class="col">
-        <input type="text" class="form-control" name="rating" autocomplete="off" value="<%= wine.rating %> ">
+        <input type="text" class="form-control" name="websiteName" value="<%= wine.websiteName %>">
       </div>
+
     </div> <br />
+    <div class="form-row">
+      <div class="col">
+        <input type="text" class="form-control" name="region" value="<%= wine.region %>">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" name="realPrice" value="<%= wine.realPrice %>">
+      </div>
+    </div>
+    </div> <br />
+    <div class="form-row">
+       <div class="col">
+        <textarea class="form-control" name="description" style="width: 50%;" 
+          value="<%= wine.description %>" rows="2"></textarea>
+      </div>
+    </div>
+    </div> <br />
+
+
     <button type="submit" class="btn btn-success">Update Wine</button>
   </form>
 

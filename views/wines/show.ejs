@@ -53,8 +53,8 @@
           <p>Favorited By:</p>
           <!-- This is where we'll put our favoritedBy.forEach loop -->
           <% wine.favoritedBy.forEach(person => { %>
-
-          <p><%= person.name %></p>
+            
+          <a href="/users/<%= person._id %>"><img width="20" id="avatarPhoto" style="border-radius: 100%;" src="<%= person.avatar %>" alt="Reviewer photo"><p><%= person.name %></p></a> 
 
          <% }) %> 
           

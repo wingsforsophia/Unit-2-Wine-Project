@@ -24,7 +24,7 @@ Invite your friends to join and see which wines they have liked and tried, as we
 
 ## Technologies Used
 
-HTML, JavaScript, Node.js, Express, Mongoose, Google OAuth, dotenv, method-override.
+HTML, JavaScript, Node.js, Express, Mongoose, Google OAuth, dotenv, method-override, Bootstrap
 
 ## Next Steps: 
 

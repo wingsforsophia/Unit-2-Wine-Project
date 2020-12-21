@@ -50,14 +50,16 @@
       <!-- This is the tab that will contain our forEach loop indicating who has the game in their collection -->
       <div class="tab-pane fade" id="favorited" role="tabpanel" aria-labelledby="favorited-tab">
         <div class="card-body">
-          <p>Favorited By:</p>
+          <% if (wine.favoritedBy.length) { %> 
           <!-- This is where we'll put our favoritedBy.forEach loop -->
           <% wine.favoritedBy.forEach(person => { %>
-            
+        
           <a href="/users/<%= person._id %>"><img width="20" id="avatarPhoto" style="border-radius: 100%;" src="<%= person.avatar %>" alt="Reviewer photo"><p><%= person.name %></p></a> 
-
+         
          <% }) %> 
-          
+            <% } else { %> 
+              <p>Be the first to make it a favorite!</p>
+          <% } %> 
          </div>
       </div>
       <!-- This is the tab that holds the review info for a game -->

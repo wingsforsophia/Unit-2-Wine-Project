@@ -52,7 +52,11 @@
         <div class="card-body">
           <p>Favorited By:</p>
           <!-- This is where we'll put our favoritedBy.forEach loop -->
+          <% wine.favoritedBy.forEach(person => { %>
 
+          <p><%= person.name %></p>
+
+         <% }) %> 
           
          </div>
       </div>

@@ -6,7 +6,6 @@ body {
 
 nav {
   background-color: white;
-
 }
 
 .wineCard {
@@ -33,10 +32,8 @@ nav {
   text-align: center;
   margin: 5rem 0 3rem 0;
   font-size: 4.5rem;
-
 }
 
 #instructions {
   text-align: center;
- 
-}
+ }

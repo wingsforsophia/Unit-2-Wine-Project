@@ -22,6 +22,7 @@ Invite your friends to join and see which wines they have liked and tried, as we
 ## Screenshots
 
 ![First screenshot](https://i.imgur.com/eNIUCLp.png)
+![Second screenshot](https://i.imgur.com/eDBUndZ.png)
 
 ## Technologies Used
 

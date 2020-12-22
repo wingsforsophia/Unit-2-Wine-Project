@@ -5,11 +5,12 @@
 
   <% wines.forEach((wine)=> { %>
 
-    <div class="list-group">
+    <div class="list-group ml-1 mr-1">
       <a href="/wines/<%= wine._id %>" class="list-group-item list-group-item-action">
         <%= wine.name %> - <%= wine.varietal %>  <% if (wine.year != null) { %>  - <%= wine.year %> <% } %> 
       </a>
     </div>
+   
     <% }) %>
 
       <%- include('../partials/footer') %>

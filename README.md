@@ -6,7 +6,7 @@ Wine Collecting app designed to be easily used on mobile.
 
 ## Background
 
-My husband and I love wine, but never remember which ones we tried. This is for people like us to be able to collect and search for wines we have already tried. 
+My husband and I love wine, but when it's time to grab a bottle, we never remember which ones we tried. This is for people like us to be able to collect and search for wines we have already tried.
 
 ## Getting Started
 
@@ -24,12 +24,17 @@ Invite your friends to join and see which wines they have liked and tried, as we
 
 ## Technologies Used
 
-HTML, JavaScript, Node.js, Express, Mongoose, Google OAuth, dotenv, method-override, Bootstrap
+HTML, JavaScript, Node.js, Express, Mongoose, Google OAuth, dotenv, method-override, Bootstrap, CSS Animate
 
 ## Next Steps: 
 
 * Add recipes and pairings 
 
+## Attributions
+
+
+Wine by Mushu from the Noun Project
+Hamburger by Arif Arif from the Noun Project
 
 
 ## Pseudocode

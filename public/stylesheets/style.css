@@ -13,3 +13,18 @@ nav {
   display: flex;
   flex-flow: wrap;
 }
+
+#landing {
+  display: flex;
+  margin: 3rem 0;
+}
+
+h1 {
+  font-size: 8rem;
+  text-align: center;
+  margin-top: 5rem;
+}
+
+#wineGlass{
+  margin-left: 3rem;
+}

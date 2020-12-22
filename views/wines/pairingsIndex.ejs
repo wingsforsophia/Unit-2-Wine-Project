@@ -1,42 +1,32 @@
 <%- include('../partials/header') %>
 
-<h3>
-  <%= title  %> for <%= wine.name %>  
-</h3>
-<div class="wineCard">
-<% wine.pairings.forEach((p)=> { %>
- 
-    <div class="card shadow p-3 mb-5 bg-white rounded text-center ml-5" style="width: 18rem;">
+  <h4 class="display-4 ml-5" ><%= title %> for <%= wine.name %></h4>
+  <div class="wineCard">
+    <% wine.pairings.forEach((p)=> { %>
+
+      <div class="card shadow p-3 mb-5 bg-white rounded text-center ml-5" style="width: 18rem;">
         <img src="<%= p.image %>" class="card-img-top" alt="image of the recipe">
         <div class="card-body">
 
-<% if (p.pairedWith != "") { %> 
-          <h5 class="card-title"><%= p.pairedWith %> </h5>
-          <% } %> 
-          <a href="<%= p.url %>" target="_blank"> Full recipe on <%= p.siteName %></a> 
-          
-          <p class="card-text">Paired by <%= p.pairer %><img width="20" id="avatarPhoto" style="border-radius: 100%;" src="<%= p.pairerAvatar %>" alt="Pairer photo"></p>
-
-          <% if (p.notes != "") { %> 
-        <p>"<%= p.notes %>"</p>
-            <% } %> 
-            
-            <% if (p.pairerAvatar === user.avatar) { %>
-
-              <form action="/wines/<%= p.wineId %>/pairings/<%= p._id %>?_method=DELETE" method="POST">
-           <button type="submit" class="btn btn-danger">Delete</button>
-         </form>
-         <% } %> 
-       
+          <% if (p.pairedWith != "" ) { %>
+            <h5 class="card-title">
+             <%= p.pairedWith %> 
+            </h5>
+            <% } %>
+              <a href="<%= p.url %>" target="_blank"> Full recipe on <%= p.siteName %></a>
+              <p class="card-text">Paired by <%= p.pairer %><img width="20" id="avatarPhoto"
+                    style="border-radius: 100%;" src="<%= p.pairerAvatar %>" alt="Pairer photo"></p>
+              <% if (p.notes !="" ) { %>
+                <p>"<%= p.notes %>"</p>
+                <% } %>
+                  <% if (p.pairerAvatar === user.avatar) { %>
+                    <form action="/wines/<%= p.wineId %>/pairings/<%= p._id %>?_method=DELETE" method="POST">
+                      <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                   <% } %>
         </div>
       </div>
-
-     
-
-    <% }) %>
+      <% }) %>
   </div>
-  
 
-      <%- include('../partials/footer') %>
-
-   
+  <%- include('../partials/footer') %>

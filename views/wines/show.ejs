@@ -1,8 +1,6 @@
 <%- include('../partials/header') %>
-  <h3>
-    <%= wine.name %>
-  </h3>
-  <div class="card shadow p-3 mb-5 bg-white rounded text-center ml-5" style="width: 24rem;">
+
+  <div class="card shadow p-3 mb-5 bg-white rounded text-center ml-5 mt-5" style="width: 24rem;">
     <img src="<%= wine.image %> " class="card-img-top mb-3" alt="image of the wine bottle">
     <ul class="nav nav-tabs" id="myTab" role="tablist">
       <li class="nav-item">
@@ -30,14 +28,11 @@
           <p class="card-text"><%= wine.varietal %> - <%= wine.year %> 
           </p>
          <% } else { %> 
-
           <p class="card-text"><%= wine.varietal %>
           </p>
           <% } %> 
           <p class="card-text"> <%= wine.description %>
           </p>
-
-
          <% if (wine.realPrice) { %> 
           <p class="card-text"><%= wine.realPrice %>
           </p>
@@ -74,10 +69,9 @@
           <p><%= r.content %></p>
           <% }) %>
           <% if (wine.reviews.length) { %> 
-            <p><b>WineCellar Rating: <%= (total / reviews.length).toFixed(2) %></b></p>
+            <p><b>Paired Score: <%= (total / reviews.length).toFixed(2) %></b></p>
             <% } else { %> 
               <p><b>Be the first to leave a review!</b></p>
-
               <% } %> 
 
         <% if (!reviews.some(u => {return u.reviewer === user.name})) { %>
@@ -131,26 +125,20 @@
                     <input type="number" hidden name="year" value="<%= wine.year %>">
                     <input type="text" hidden name="wineId" value="<%= wine._id %>">
                     <input type="text" hidden name="wineImage" value="<%= wine.image %>">
-                    <button class="btn btn-success">
+                    <button class="btn btn-success mt-1">
                       <%= user.wineList.some(w=> {return w.name === wine.name}) ? "Remove from Wine List" : "Add to Wine List" %>
                     </button>
                 </form>
-
                 <% if (wine.pairings.length) {  %> 
-
                 <form action="/wines/<%= wine._id %>/pairings" method="GET">
-                 <button class="btn btn-primary">View Pairings</button>
+                 <button class="btn btn-primary mt-1">View Pairings</button>
                 </form>
                 <% } %> 
 
+                
                 <% if (user.email === "shseremetis@gmail.com") { %>
                   <form action="/wines/<%= wine._id %>/edit">
-                    <button type="submit" class="btn btn-dark">Edit Wine</button>
+                    <button type="submit" class="btn btn-dark mt-1">Edit Wine</button>
                   </form>
-
                 <% } %> 
-
-
-
-
                 <%- include('../partials/footer') %>

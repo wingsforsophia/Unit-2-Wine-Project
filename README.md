@@ -1,6 +1,6 @@
 # Paired
 
-[Paired](http://unit-2-wine-app.herokuapp.com/)
+[Paired App](http://unit-2-wine-app.herokuapp.com/)
 
 Wine Collecting app designed to be easily used on mobile.
 
@@ -36,6 +36,8 @@ HTML, JavaScript, Node.js, Express, Mongoose, Google OAuth, dotenv, method-overr
 ## Attributions
 
 [The Noun Project](https://thenounproject.com/)
+[Total Wine](https://thenounproject.com/)
+
 
 
 

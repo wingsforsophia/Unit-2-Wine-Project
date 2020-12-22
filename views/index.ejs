@@ -1,18 +1,26 @@
 <%- include('partials/header') %>
-<div id="logo" class="animate__animated animate__zoomInUp animate__delay-2s">
-    <h1> Paired</h1>
+
+<% if (user) { %> 
+    <h1>Welcome to Paired</h1>
+    <p>Navigate to the "All Wines" section to start picking wines or check out "Users" and add some friends!</p>
+    <% } else { %>
+        <div id="logo" class="animate__animated animate__zoomInUp animate__delay-2s">
+            <h1> Paired</h1>
+            </div>
+        <div id="landing">
+            <div class="animate__animated animate__bounceInLeft animate__delay-1s" id="wineGlass">
+                <img src="https://i.imgur.com/MdLQpVZ.png"  width="600" height="600" alt="">
+            </div>
+            <div class="animate__animated animate__bounceInRight" id="hamburger">
+                <img src="https://i.imgur.com/2z8vpIS.png" width="500" height="600" alt="">
+            </div>
+        </div>
+        <br>
     
-    </div>
-
-<div id="landing">
-    <div class="animate__animated animate__bounceInLeft animate__delay-1s" id="wineGlass">
-        <img src="https://i.imgur.com/MdLQpVZ.png"  width="600" height="600" alt="">
-    </div>
-    <div class="animate__animated animate__bounceInRight" id="hamburger">
-        <img src="https://i.imgur.com/2z8vpIS.png" width="500" height="600" alt="">
-    </div>
-</div>
-<br>
-
+    
+    <% } %> 
 
 <%- include('partials/footer') %>
+
+
+

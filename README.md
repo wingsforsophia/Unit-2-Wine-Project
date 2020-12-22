@@ -1,6 +1,6 @@
-# WineCellar
+# Paired
 
-[WineCellar](http://unit-2-wine-app.herokuapp.com/)
+[Paired](http://unit-2-wine-app.herokuapp.com/)
 
 Wine Collecting app designed to be easily used on mobile.
 

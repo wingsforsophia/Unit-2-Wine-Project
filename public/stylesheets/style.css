@@ -19,7 +19,7 @@ nav {
   margin: 3rem 0;
 }
 
-h1 {
+#logo {
   font-size: 8rem;
   text-align: center;
   margin-top: 5rem;
@@ -27,4 +27,11 @@ h1 {
 
 #wineGlass{
   margin-left: 3rem;
+}
+
+#welcome {
+  text-align: center;
+  margin-top: 5rem;
+  font-size: 5rem;
+
 }

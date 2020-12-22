@@ -1,11 +1,11 @@
 <%- include('partials/header') %>
 
 <% if (user) { %> 
-    <h1>Welcome to Paired</h1>
+    <h3 id="Welcome" class="animate__animated animate__bounceInLeft">Welcome to Paired</h3>
     <p>Navigate to the "All Wines" section to start picking wines or check out "Users" and add some friends!</p>
     <% } else { %>
-        <div id="logo" class="animate__animated animate__zoomInUp animate__delay-2s">
-            <h1> Paired</h1>
+        <div class="animate__animated animate__zoomInUp animate__delay-2s">
+            <h1 id="logo"> Paired</h1>
             </div>
         <div id="landing">
             <div class="animate__animated animate__bounceInLeft animate__delay-1s" id="wineGlass">

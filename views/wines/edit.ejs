@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 <h4 class="display-4 ml-5" ><%= title %> </h4>
 
-  <form action="/wines/<%= wine._id %>?_method=PUT" method="POST">
+  <form class="m-4" action="/wines/<%= wine._id %>?_method=PUT" method="POST">
     <div class="form-row">
       <div class="col">
         <input type="text" class="form-control" autocomplete="off" name="name" placeholder="Wine Name" value="<%= wine.name %> ">

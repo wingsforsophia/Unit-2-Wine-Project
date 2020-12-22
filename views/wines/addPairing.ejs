@@ -1,9 +1,6 @@
 <%- include('../partials/header') %>
-  <h3>
-    <%= title %>
-  </h3>
-
-  <form action="/wines/<%= wine._id %>/pairings" method="POST">
+<h4 class="display-4 ml-5" ><%= title %> </h4>
+  <form class="m-4" action="/wines/<%= wine._id %>/pairings" method="POST">
     <div class="form-row">
       <div class="col">
         <input type="text" class="form-control" name="pairedWith" autocomplete="off" placeholder="What did you pair it with?">

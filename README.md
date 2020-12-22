@@ -39,18 +39,8 @@ HTML, JavaScript, Node.js, Express, Mongoose, Google OAuth, dotenv, method-overr
 
 
 
-## Pseudocode
+## Trello Board
 
-* create new wine
-    * render new view
-    * handle post request
+[Trello Planning Board](https://trello.com/b/U4rrbbPK/wine-recipes-app)
 
-* index view
-* show view
-* delete functionality
-* update functionality
-* Add prices, reviews, pairings
-* add post routes for those
-* user index view
-* user show view
-* my wines view
+

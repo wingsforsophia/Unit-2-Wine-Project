@@ -35,9 +35,8 @@ HTML, JavaScript, Node.js, Express, Mongoose, Google OAuth, dotenv, method-overr
 
 ## Attributions
 
+[The Noun Project](https://thenounproject.com/)
 
-Wine by Mushu from the Noun Project
-Hamburger by Arif Arif from the Noun Project
 
 
 ## Pseudocode

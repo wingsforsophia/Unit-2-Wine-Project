@@ -31,7 +31,12 @@ nav {
 
 #welcome {
   text-align: center;
-  margin-top: 5rem;
+  margin: 5rem 0 3rem 0;
   font-size: 4.5rem;
 
+}
+
+#instructions {
+  text-align: center;
+ 
 }

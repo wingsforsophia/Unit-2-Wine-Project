@@ -10,7 +10,7 @@ My husband and I love wine, but when it's time to grab a bottle, we never rememb
 
 ## Getting Started
 
-Find a wine in the All Wines view or Add New Wine! Then you can add or remove it from your wine list and favorites and start paring!
+Find a wine in the All Wines view or Add New Wine! Then you can add or remove it from your wine list and favorites and start pairing!
 
 Invite your friends to join and see which wines they have liked and tried, as well. 
 

@@ -32,7 +32,6 @@ Invite your friends to join and see which wines they have liked and tried, as we
 * Express
 * Mongoose
 * Google OAuth
-* dotenv
 * method-override
 * Bootstrap
 * CSS Animate

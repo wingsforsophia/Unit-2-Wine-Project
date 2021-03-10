@@ -43,8 +43,8 @@ Invite your friends to join and see which wines they have liked and tried, as we
 
 ## Attributions
 
-[The Noun Project](https://thenounproject.com/)
-[Total Wine](https://thenounproject.com/)
+* [The Noun Project](https://thenounproject.com/)
+* [Total Wine](https://thenounproject.com/)
 
 
 
